@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Arebis.Logging.GrayLog</id>
+    <version>$version$</version>
+    <title>Arebis GrayLog Logging Client</title>
+    <authors>Codetuner</authors>
+    <owners>Codetuner</owners>
+    <licenseUrl>https://raw.githubusercontent.com/codetuner/Arebis.Logging.GrayLog/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/codetuner/Arebis.Logging.GrayLog</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>.NET GrayLog client library written in C#</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2016 Rudi Breedenraedt</copyright>
+    <tags>Logging GrayLog</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="8.0.2" />
+    </dependencies>
+  </metadata>
+</package>

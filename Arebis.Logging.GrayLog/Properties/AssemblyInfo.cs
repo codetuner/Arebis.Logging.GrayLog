@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Arebis .NET Extensions for Logging")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription(".NET GrayLog client library written in C#")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Arebis")]
 [assembly: AssemblyProduct("Arebis Library")]
