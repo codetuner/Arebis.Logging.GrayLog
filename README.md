@@ -23,6 +23,9 @@ A simple "Hello World" logging application can be created with the following cod
         logger.Send("Hello World !");
     }
 
+Which results in the following logging:
+[Sample 1 logging](https://raw.githubusercontent.com/codetuner/Arebis.Logging.GrayLog/master/screenshot_sample1.png "Sample 1 logging")
+
 The Send() method has the following signature:
 
     public void Send(string shortMessage, string fullMessage = null, object data = null)
@@ -33,6 +36,9 @@ A more complete example:
     { 
         logger.Send("Hello", "Welcome John", new { Username = "John", Email = "john@example.com" });
     }
+
+Which results in the following logging:
+[Sample 2 logging](https://raw.githubusercontent.com/codetuner/Arebis.Logging.GrayLog/master/screenshot_sample2.png "Sample 2 logging")
 
 There is also a convenience method to send Exception objects:
 
