@@ -24,7 +24,7 @@ A simple "Hello World" logging application can be created with the following cod
     }
 
 Which results in the following logging:
-[Sample 1 logging](https://raw.githubusercontent.com/codetuner/Arebis.Logging.GrayLog/master/screenshot_sample1.png "Sample 1 logging")
+![Sample 1 logging](https://raw.githubusercontent.com/codetuner/Arebis.Logging.GrayLog/master/screenshot_sample1.png "Sample 1 logging")
 
 The Send() method has the following signature:
 
@@ -38,7 +38,7 @@ A more complete example:
     }
 
 Which results in the following logging:
-[Sample 2 logging](https://raw.githubusercontent.com/codetuner/Arebis.Logging.GrayLog/master/screenshot_sample2.png "Sample 2 logging")
+![Sample 2 logging](https://raw.githubusercontent.com/codetuner/Arebis.Logging.GrayLog/master/screenshot_sample2.png "Sample 2 logging")
 
 There is also a convenience method to send Exception objects:
 
