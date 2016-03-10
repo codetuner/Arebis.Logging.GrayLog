@@ -64,12 +64,14 @@ namespace Arebis.Logging.GrayLog
             // Get message id:
             NextChunckedMessageId++;
 
-            var messageBodyCompressed = this.Compress(messageBody, CompressionLevel.Optimal);
+            // Apply compression:
+            if (this.CompressionTreshold != -1 && messageBody.Length > this.CompressionTreshold)
+                messageBody = this.Compress(messageBody, CompressionLevel.Optimal);
 
-            using (var objectStream = new MemoryStream(messageBodyCompressed))
+            using (var objectStream = new MemoryStream(messageBody))
             {
                 // Calculate needed chunk count:
-                var chunkCount = PartsNeeded(messageBodyCompressed.Length, MaxPacketSize - 12);
+                var chunkCount = PartsNeeded(messageBody.Length, MaxPacketSize - 12);
                 if (chunkCount > 128) 
                 {
                     Debug.WriteLine(String.Format("Error: Maximum number of GrayLog GELF UDP chuncks exceeded; {0} chuncks while maximum is {1}", chunkCount, 128));

@@ -7,11 +7,15 @@ Features and Limitations
 ------------------------
 
 The Arebis GrayLog library is a simple library to write logging records to GrayLog
-using the UDP protocol.
+using the UDP protocol. The implementation sends messages by GZIP compressing them,
+and chuncking them if needed, according to the specifications of the Graylog Extended
+Log Format (GELF).
 
 NuGet package: https://www.nuget.org/packages/Arebis.Logging.GrayLog/
 
 Source code and documentation: https://github.com/codetuner/Arebis.Logging.GrayLog
+
+GELF specifications: http://docs.graylog.org/en/latest/pages/gelf.html
 
 Sample Usage
 ------------
@@ -85,6 +89,8 @@ The **GrayLogFacility** setting specifies the facility argument to set for all m
 the server name of your GrayLog instance. You can also specify the **GrayLogUdpPort** setting if you want
 to override the default port number 12201.
 
-More on GELF can be found on: http://docs.graylog.org/en/latest/pages/gelf.html
+Additionally, you can set a compression treshold with the AppSetting key **GrayLogCompressionTreshold**. By default this value is
+0 and means compression is always enabled. Setting this value to i.e. 500 would mean to apply compression only when message body
+is more than 500 bytes. A value of -1 disables compression completely.
 
 For further usage details and manual, check the [project's WIKI page](https://github.com/codetuner/Arebis.Logging.GrayLog/wiki).

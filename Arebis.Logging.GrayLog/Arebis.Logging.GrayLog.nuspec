@@ -13,8 +13,5 @@
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2016 Rudi Breedenraedt</copyright>
     <tags>Logging GrayLog</tags>
-    <dependencies>
-      <dependency id="Newtonsoft.Json" version="8.0.2" />
-    </dependencies>
   </metadata>
 </package>

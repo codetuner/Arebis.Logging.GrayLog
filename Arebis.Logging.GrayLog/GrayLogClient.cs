@@ -1,13 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
+using System.Configuration;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Arebis.Logging.GrayLog
 {
@@ -23,12 +21,19 @@ namespace Arebis.Logging.GrayLog
         protected GrayLogClient(string facility)
         {
             this.Facility = facility;
+            this.CompressionTreshold = Int32.Parse(ConfigurationManager.AppSettings["GrayLogCompressionTreshold"] ?? "0");
         }
 
         /// <summary>
         /// The facility to set on all sent messages.
         /// </summary>
         public string Facility { get; protected set; }
+
+        /// <summary>
+        /// Number of bytes starting at which compression is enabled (when compression is supported).
+        /// -1 to disable compression completely.
+        /// </summary>
+        public int CompressionTreshold { get; set; }
 
         /// <summary>
         /// Sents a message to GrayLog.
@@ -80,10 +85,10 @@ namespace Arebis.Logging.GrayLog
         }
 
         /// <summary>
-        /// Protocol specific implementation of sending a message.
+        /// Protocol specific implementation of (compressing and) sending of a message.
         /// </summary>
-        /// <param name="messageBody">The UTF8 encoded JSON message.</param>
-        protected abstract void InternallySendMessage(byte[] messageBody);
+        /// <param name="uncompressedMessageBody">The uncompressed UTF8 encoded JSON message.</param>
+        protected abstract void InternallySendMessage(byte[] uncompressedMessageBody);
 
         /// <summary>
         /// Disposes the client.
