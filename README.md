@@ -53,7 +53,8 @@ There is also a convenience method to send Exception objects:
     {
         try
         {
-            ...
+            // Example of a thrown exception:
+            throw new ApplicationException("Something went wrong.");
         }
         catch (Exception ex)
         {
