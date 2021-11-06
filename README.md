@@ -3,6 +3,8 @@ Arebis.Logging.GrayLog
 
 .NET GrayLog client library written in C#
 
+**Arebis.Logging.GrayLog is now part of [the Arebis.Common repository](https://github.com/codetuner/Arebis.Common/).**
+
 Features and Limitations
 ------------------------
 
